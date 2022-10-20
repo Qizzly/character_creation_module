@@ -1,10 +1,12 @@
 from random import randint
 
+from graphic_arts.start_game_banner import run_screensaver
+
 
 def attack(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         return (
-            f'{char_name} нанёс урон противнику равный{5 + randint(3, 5)}')
+            f'{char_name} нанёс урон противнику равный {5 + randint(3, 5)}')
     if char_class == 'mage':
         return (
             f'{char_name} нанёс урон противнику равный {5 + randint(5, 10)}')
@@ -25,7 +27,7 @@ def defence(char_name: str, char_class: str) -> str:
 def special(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         return (f'{char_name} применил '
-                'специальное умение «Выносливость {80 + 25}»')
+                f'специальное умение «Выносливость {80 + 25}»')
     if char_class == 'mage':
         return (f'{char_name} применил специальное умение «Атака {5 + 40}»')
     if char_class == 'healer':
@@ -78,7 +80,8 @@ def choice_char_class() -> str:
     return char_class
 
 
-def main() -> str:
+if __name__ == '__main__':
+    run_screensaver()
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name: str = input('...назови себя: ')
